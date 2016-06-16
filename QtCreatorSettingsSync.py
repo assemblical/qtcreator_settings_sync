@@ -1,6 +1,8 @@
 from lib.Contants import Constants
 from lib.Exporter import Exporter
+from lib.Parser import Parser
 
 if __name__ == '__main__':
     Constants.init()
-    Exporter.exportInitFile([Constants.INI_FILE_CATEGORIES["GENERAL"], Constants.INI_FILE_CATEGORIES["CORE"]])
+    Parser.parseConfigJSON()
+    Exporter.exportInitFile()

@@ -17,12 +17,21 @@ class Constants:
     QTCREATOR_CONFIG_DIR = ""
     QTCREATOR_CONFIG_FILE = ""
 
+    # sync config file
+    SYNC_CONFIG_FILE = ""
+
+    # config ini file categories
+    CONFIG_INI_FILE_CATEGORIES = []
+
     @staticmethod
     def init():
-        if Constants.OS == Constants.WINDOWS:
-            Constants.EXPORTER_DIR = os.path.dirname(os.path.realpath(__file__)) + "\\exported"
-            Constants.EXPORTER_CONFIG_FILE = Constants.EXPORTER_DIR + "\\QtCreator.ini"
 
+        Constants.SYNC_CONFIG_FILE = os.path.dirname(__file__) + '/../config.json'
+        Constants.EXPORTER_DIR = os.path.dirname(os.path.realpath(__file__)) + "/../exported"
+        Constants.EXPORTER_CONFIG_FILE = Constants.EXPORTER_DIR + "/QtCreator.ini"
+
+        # os specific storage paths
+        if Constants.OS == Constants.WINDOWS:
             Constants.QTCREATOR_CONFIG_DIR = os.environ["APPDATA"] + "\\QtProject\\"
             Constants.QTCREATOR_CONFIG_FILE = Constants.QTCREATOR_CONFIG_DIR + "QtCreator.ini"
         if Constants.OS == Constants.MACOS:
@@ -30,49 +39,51 @@ class Constants:
         if Constants.OS == Constants.LINUX:
             print("TODO")
 
-    # ini file categories
-    INI_FILE_CATEGORIES = {
-        "GENERAL": "[General]",
-        "CPPCODESTYLESETTINGS": "[CppCodeStyleSettings]",
-        "QMLJSTABPREFERENCES": "[QmlJSTabPreferences]",
-        "NAVIGATION": "[Navigation]",
-        "OUTPUTPANEVISBILITY": "[OutputPaneVisibility]",
-        "OUTPUTPANEPLACEHOLDER": "[OutputPanePlaceHolder]",
-        "STATUSBAR": "[StatusBar]",
-        "FIND": "[Find]",
-        "SEARCHRESULTS": "[SearchResults]",
-        "PROJECTEXPLORER": "[ProjectExplorer]",
-        "BAZAAR": "[bazaar]",
-        "CVS": "[CVS]",
-        "GIT": "[Git]",
-        "MERCURIAL": "[Mercurial]",
-        "CONSOLE": "[Console]",
-        "SUBVERSION": "[Subversion]",
-        "DEBUGMODE": "[DebugMode]",
-        "QMLINSPECTOR": "[QML.Inspector]",
-        "CDB2": "[CDB2]",
-        "GENERICPROJECT": "[GenericProject]",
-        "COMPLETERHISTORY": "[CompleterHistory]",
-        "%GENERAL": "[%General]",
-        "MAINWINDOW": "[MainWindow]",
-        "RECENTFILES": "[RecentFiles]",
-        "DIRECTORIES": "[Directories]",
-        "EDITORMANAGER": "[EditorManager]",
-        "HELP": "[Help]",
-        "EXTERNALTOOLS": "[ExternalTools]",
-        "ANALYZER": "[Analyzer]",
-        "QBSPROJECTMANAGER": "[QbsProjectManager]",
-        "CORE": "[Core]",
-        "FAKEVIM": "[FakeVim]",
-        "FAKEVIMEXCOMMAND": "[FakeVimExCommand]",
-        "FAKEVIMUSERCOMMAND": "[FakeVimUserCommand]",
-        "KEYBOARDSHORTCUTS": "[KeyboardShortcuts]",
-        "TEXTEDITOR": "[TextEditor]",
-        "TEXTSNIPPETSSETTINGS": "[TextSnippetsSettings]",
-        "CPPTOOLS": "[CppTools]",
-        "DEBUGGERPERSPECTIVECPP": "[Debugger.Perspective.Cpp]",
-        "TEXTTABPREFERENCES": "[textTabPreferences]",
-        "TEXTMARGINSETTINGS": "[textMarginSettings]",
-        "ANDROIDCONFIGURATION": "[AndroidConfiguration]",
-        "CLANGSTATICANALYZER": "[ClangStaticAnalyzer]"
-    }
+'''
+    possible ini file categories
+    INI_FILE_CATEGORIES = [
+        "General",
+        "CppCodeStyleSettings",
+        "QmlJSTabPreferences",
+        "Navigation",
+        "OutputPaneVisibility",
+        "OutputPanePlaceHolder",
+        "StatusBar",
+        "Find",
+        "SearchResults",
+        "ProjectExplorer",
+        "bazaar",
+        "CVS",
+        "Git",
+        "Mercurial",
+        "Console",
+        "Subversion",
+        "DebugMode",
+        "QML.Inpector",
+        "CDB2",
+        "GenericProject",
+        "CompleterHistory",
+        "%General",
+        "MainWindow",
+        "RecentFiles",
+        "Directories",
+        "EditorManager",
+        "Help",
+        "ExternalTools",
+        "Analyzer",
+        "QbsProjectManager",
+        "Core",
+        "FakeVim",
+        "FakeVimExCommand",
+        "FakeVimUserCommand",
+        "KeyboardShortcuts",
+        "TextEditor",
+        "TextSnippetsSettings",
+        "CppTools",
+        "Debugger.Perspective.Cpp",
+        "textTabPreferences",
+        "textMarginSettings",
+        "AndroidConfiguration",
+        "ClangStaticAnalyzer",
+    ]
+'''

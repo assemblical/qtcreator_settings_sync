@@ -1,13 +1,13 @@
 {
   "INI_FILE_CATEGORIES":
   [
-    "GENERAL",
-    "CPPCODESTYLESETTINGS",
-    "FAKEVIM",
-    "FAKEVIMEXCOMMAND",
-    "FAKEVIMUSERCOMMAND",
-    "KEYBOARDSHORTCUTS",
-    "TEXTEDITOR",
-    "TEXTSNIPPETSSETTINGS"
+    "General",
+    "CppCodeStyleSettings",
+    "FakeVim",
+    "FakeVimExCommand",
+    "FakeVimUserCommand",
+    "KeyboardShortcuts",
+    "TextEditor",
+    "TextSnippetsSettings"
   ]
 }

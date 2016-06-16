@@ -3,6 +3,6 @@ from lib.Contants import Constants
 
 class Exporter:
     @staticmethod
-    def exportInitFile(categories):
+    def exportInitFile():
         w = Writer(Constants.EXPORTER_CONFIG_FILE)
-        w.writeInitFile(categories)
+        w.writeInitFile(Constants.CONFIG_INI_FILE_CATEGORIES)
