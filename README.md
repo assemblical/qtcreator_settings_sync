@@ -1,8 +1,8 @@
 # qtcreator_settings_sync
-Python tool to import and export settings for QtCreator across devices.
+Python tool to import and export settings for QtCreator 4 across devices.
 
 # ini file categories
-The following categories from the ini file can be synced:
+Possible ini file categories:
 ```
 ...
 INI_FILE_CATEGORIES = [
